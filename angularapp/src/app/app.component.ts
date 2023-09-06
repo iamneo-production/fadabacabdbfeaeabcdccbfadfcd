@@ -10,7 +10,7 @@ export class AppComponent {
   fromCurrency: string = '1.126735';
   toCurrency: string = '1.126735';
   amount: string = '0';
-  result: string;
+  result: string | undefined;
 
   constructor(private forex: ForexConverterPipe){}
 
@@ -19,7 +19,7 @@ export class AppComponent {
       this.result = this.forex.transform(this.amount,this.fromCurrency,this.toCurrency);
     }
     else{
-      this.result = Number(this.amount) > 0 ? this.amount : null;
+      //this.result = Number(this.amount) > 0 ? this.amount : null;
     }
     
   }
